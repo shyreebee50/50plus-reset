@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>50+ Reset - Your Healing Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 100%;
+            background: white;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .header .subtitle {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: white;
+            overflow-x: auto;
+            border-bottom: 3px solid #f0f0f0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px 10px;
+            text-align: center;
+            background: white;
+            color: #666;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-tab:hover {
+            background: #f8f9fa;
+        }
+
+        .nav-tab.active:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .tab-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        .meal-category, .exercise-day {
+            margin-bottom: 25px;
+        }
+
+        .meal-category h3, .exercise-day h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .recipe-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .recipe-card h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .recipe-card p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .recipe-card .ingredients {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .shopping-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .shopping-category {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .shopping-category h4 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .checkbox-item:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.9em;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .day-tracker {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .day-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .day-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exercise-list li {
+            background: white;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            font-size: 0.9em;
+        }
+
+        .exercise-list li strong {
+            color: #667eea;
+        }
+
+        .daily-checklist {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .daily-checklist h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .progress-info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .progress-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .progress-info .days-count {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .reset-btn:hover {
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Period Tracker Styles */
+        .period-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .period-day {
+            aspect-ratio: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: white;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+
+        .period-day:hover {
+            background: #f0f0f0;
+        }
+
+        .period-day.period-day-active {
+            background: #ff6b9d;
+            color: white;
+        }
+
+        .period-day.ovulation-day {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        .period-day.fertile-day {
+            background: #ffe066;
+        }
+
+        .period-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .period-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .period-legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .period-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .period-stat {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .period-stat .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff6b9d;
+        }
+
+        .period-stat .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Migraine Tracker Styles */
+        .migraine-log {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .migraine-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .severity-scale {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .severity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .severity-btn.selected {
+            border-color: #ff6b6b;
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .migraine-entries {
+            margin-top: 20px;
+        }
+
+        .migraine-entry {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .migraine-entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .migraine-entry-date {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .migraine-entry-severity {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .migraine-entry-details {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .migraine-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .migraine-stat {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .migraine-stat .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .migraine-stat .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tab {
+                min-width: 100px;
+                padding: 12px 8px;
+                font-size: 0.8em;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shopping-list {
+                grid-template-columns: 1fr;
+            }
+
+            .day-tracker {
+                grid-template-columns: 1fr;
+            }
+
+            .period-stats, .migraine-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 50+ Reset</h1>
+            <p class="subtitle">Your Complete Healing Journey</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('daily')">Daily Tracker</button>
+            <button class="nav-tab" onclick="showTab('inspiration')">Faith</button>
+            <button class="nav-tab" onclick="showTab('recipes')">Recipes</button>
+            <button class="nav-tab" onclick="showTab('exercise')">Exercise</button>
+            <button class="nav-tab" onclick="showTab('period')">Period</button>
+            <button class="nav-tab" onclick="showTab('migraine')">Migraine</button>
+            <button class="nav-tab" onclick="showTab('guides')">Guides</button>
+            <button class="nav-tab" onclick="showTab('shopping')">Shopping</button>
+        </div>
+
+        <!-- Daily Tracker Tab -->
+        <div id="daily" class="tab-content active">
+            <div class="progress-info">
+                <h3>🎯 Your Reset Journey</h3>
+                <div class="days-count" id="daysCount">1</div>
+                <p>Days on your healing journey</p>
+                <p id="startDate">Started today!</p>
+            </div>
+
+            <div class="daily-checklist">
+                <h3>✅ Today's Goals</h3>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="water" data-daily="true">
+                    <label for="water">💧 8 glasses of water</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="veggies" data-daily="true">
+                    <label for="veggies">🥬 5 servings of vegetables</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="protein" data-daily="true">
+                    <label for="protein">🍖 Lean protein with each meal</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="exercise" data-daily="true">
+                    <label for="exercise">🏃‍♀️ 30 minutes of movement</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="sleep" data-daily="true">
+                    <label for="sleep">😴 8 hours of sleep</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="meditation" data-daily="true">
+                    <label for="meditation">🧘‍♀️ 10 minutes of mindfulness</label>
+                </div>
+            </div>
+
+            <div class="daily-checklist">
+                <h3>🍽️ Today's Meals</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🍳 Breakfast</h4>
+                    <div id="breakfastMeals">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-green-power-bowl" data-meal="breakfast" data-daily="true">
+                            <label for="meal-green-power-bowl">Green Power Bowl</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-protein-overnight-oats" data-meal="breakfast" data-daily="true">
+                            <label for="meal-protein-overnight-oats">Protein Overnight Oats</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-berry-smoothie-bowl" data-meal="breakfast" data-daily="true">
+                            <label for="meal-berry-smoothie-bowl">Berry Smoothie Bowl</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" id="customBreakfast" placeholder="Add custom breakfast..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                        <button class="btn" onclick="addCustomMeal('breakfast')" style="padding: 8px 15px; font-size: 0.9em;">Add</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🥙 Lunch</h4>
+                    <div id="lunchMeals">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-mediterranean-chicken" data-meal="lunch" data-daily="true">
+                            <label for="meal-mediterranean-chicken">Mediterranean Chicken</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-salmon-salad" data-meal="lunch" data-daily="true">
+                            <label for="meal-salmon-salad">Salmon Salad</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-power-wrap" data-meal="lunch" data-daily="true">
+                            <label for="meal-power-wrap">Power Wrap</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" id="customLunch" placeholder="Add custom lunch..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                        <button class="btn" onclick="addCustomMeal('lunch')" style="padding: 8px 15px; font-size: 0.9em;">Add</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🍽️ Dinner</h4>
+                    <div id="dinnerMeals">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-lean-beef-stir-fry" data-meal="dinner" data-daily="true">
+                            <label for="meal-lean-beef-stir-fry">Lean Beef Stir-fry</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-sweet-potato-bowl" data-meal="dinner" data-daily="true">
+                            <label for="meal-sweet-potato-bowl">Sweet Potato Bowl</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="meal-baked-cod" data-meal="dinner" data-daily="true">
+                            <label for="meal-baked-cod">Baked Cod</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" id="customDinner" placeholder="Add custom dinner..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                        <button class="btn" onclick="addCustomMeal('dinner')" style="padding: 8px 15px; font-size: 0.9em;">Add</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🍎 Snacks & Other</h4>
+                    <div id="snackMeals">
+                        <!-- Custom snacks will be added here -->
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" id="customSnack" placeholder="Add snacks or other meals..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                        <button class="btn" onclick="addCustomMeal('snack')" style="padding: 8px 15px; font-size: 0.9em;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-checklist">
+                <h3>💪 Today's Exercise</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">💪 Today's Exercise Options</h4>
+                    <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">Choose any exercises you complete today:</p>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🏃‍♀️ Quick Workouts</h4>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="exercise-walk" data-daily="true" data-exercise="true">
+                        <label for="exercise-walk">20-30 minute walk</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="exercise-yoga" data-daily="true" data-exercise="true">
+                        <label for="exercise-yoga">15 minutes yoga/stretching</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="exercise-stairs" data-daily="true" data-exercise="true">
+                        <label for="exercise-stairs">Climb stairs 5-10 times</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="exercise-strength" data-daily="true" data-exercise="true">
+                        <label for="exercise-strength">10 minutes strength exercises</label>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 10px;">🎯 Custom Exercise</h4>
+                    <div id="customExercises">
+                        <!-- Custom exercises will be added here -->
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" id="customExercise" placeholder="Add your own exercise..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                        <button class="btn" onclick="addCustomExercise()" style="padding: 8px 15px; font-size: 0.9em;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn reset-btn" onclick="resetProgress()">🔄 Start New Journey</button>
+            </div>
+        </div>
+
+        <!-- Faith & Inspiration Tab -->
+        <div id="inspiration" class="tab-content">
+            <div class="section">
+                <div class="section-header">✝️ Daily Inspiration</div>
+                <div class="section-content">
+                    <div class="progress-info" style="margin-bottom: 30px;">
+                        <h3>🙏 Today's Verse</h3>
+                        <div id="dailyVerse" style="font-size: 1.1em; font-style: italic; line-height: 1.8; margin: 15px 0;">
+                            "She is clothed with strength and dignity; she can laugh at the days to come."
+                        </div>
+                        <div id="verseReference" style="font-size: 0.9em; opacity: 0.9;">
+                            - Proverbs 31:25
+                        </div>
+                        <button class="btn" onclick="getNewVerse()" style="margin-top: 15px;">🔄 New Verse</button>
+                    </div>
+
+                    <div class="recipe-grid">
+                        <div class="recipe-card" style="border-left: 4px solid #9d4edd;">
+                            <h4>💪 Strength & Health</h4>
+                            <p style="font-style: italic; color: #666;">"Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own."</p>
+                            <div class="ingredients" style="color: #9d4edd; font-weight: 500;">1 Corinthians 6:19-20</div>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #2d6a4f;">
+                            <h4>🌱 New Beginnings</h4>
+                            <p style="font-style: italic; color: #666;">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!"</p>
+                            <div class="ingredients" style="color: #2d6a4f; font-weight: 500;">2 Corinthians 5:17</div>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #d4a574;">
+                            <h4>☮️ Peace & Rest</h4>
+                            <p style="font-style: italic; color: #666;">"Come to me, all you who are weary and burdened, and I will give you rest."</p>
+                            <div class="ingredients" style="color: #d4a574; font-weight: 500;">Matthew 11:28</div>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #e76f51;">
+                            <h4>❤️ God's Love</h4>
+                            <p style="font-style: italic; color: #666;">"But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."</p>
+                            <div class="ingredients" style="color: #e76f51; font-weight: 500;">Romans 5:8</div>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #457b9d;">
+                            <h4>🙌 God's Plan</h4>
+                            <p style="font-style: italic; color: #666;">"'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, to give you hope and a future.'"</p>
+                            <div class="ingredients" style="color: #457b9d; font-weight: 500;">Jeremiah 29:11</div>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #f4a261;">
+                            <h4>🦅 Renewed Strength</h4>
+                            <p style="font-style: italic; color: #666;">"But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."</p>
+                            <div class="ingredients" style="color: #f4a261; font-weight: 500;">Isaiah 40:31</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">🌟 Encouraging Words</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card" style="border-left: 4px solid #667eea;">
+                            <h4>"God's timing is perfect"</h4>
+                            <p>Your health journey is in His hands. Trust the process and be patient with yourself. Every small step forward is progress in His eyes.</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #764ba2;">
+                            <h4>"You are fearfully and wonderfully made"</h4>
+                            <p>Psalm 139:14 reminds us that God created you with intention and love. Honor the body He gave you with healthy choices.</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #ff6b9d;">
+                            <h4>"His mercies are new every morning"</h4>
+                            <p>Lamentations 3:23 - Each day is a fresh start. Yesterday's struggles don't define today's possibilities.</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #4ecdc4;">
+                            <h4>"She is more precious than rubies"</h4>
+                            <p>Proverbs 31:10 - You are valuable beyond measure. Treat yourself with the love and care you deserve.</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #ffe066;">
+                            <h4>"With God, all things are possible"</h4>
+                            <p>Matthew 19:26 - Your health goals, your dreams, your healing journey - nothing is too difficult for Him.</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #95e1d3;">
+                            <h4>"He gives strength to the weary"</h4>
+                            <p>Isaiah 40:29 - On difficult days, remember that God's strength is made perfect in your weakness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">📖 Health & Wellness Prayers</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card" style="border-left: 4px solid #667eea; background: #f8f9ff;">
+                            <h4>🙏 Morning Prayer</h4>
+                            <p style="font-style: italic;">"Lord, thank You for this new day and the opportunity to honor You with my choices. Give me wisdom to nourish my body well, strength for my activities, and peace in my heart. Help me remember that my body is Your temple. Amen."</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #2d6a4f; background: #f0f8f5;">
+                            <h4>🍽️ Mealtime Blessing</h4>
+                            <p style="font-style: italic;">"Father, bless this food to nourish my body and give me energy to serve You and others. Help me eat mindfully and with gratitude for Your provision. May this meal fuel me for the good works You have prepared for me. Amen."</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #e76f51; background: #fef7f6;">
+                            <h4>💪 Exercise Prayer</h4>
+                            <p style="font-style: italic;">"God, as I move my body today, remind me that I am caring for the temple You've given me. Strengthen not just my muscles, but my spirit. Help me find joy in movement and gratitude for what my body can do. Amen."</p>
+                        </div>
+
+                        <div class="recipe-card" style="border-left: 4px solid #9d4edd; background: #faf8ff;">
+                            <h4>😴 Evening Rest</h4>
+                            <p style="font-style: italic;">"Lord, as I prepare for rest, I thank You for carrying me through this day. Help me release any worries or stress to You. Grant me peaceful sleep and restoration. Tomorrow is a new day of Your mercies. Amen."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipes Tab -->
+        <div id="recipes" class="tab-content">
+            <div style="background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <input type="text" id="recipeSearch" placeholder="Search recipes..." style="flex: 1; padding: 12px 15px; border: 2px solid #f0f0f0; border-radius: 25px; font-size: 1em; outline: none; transition: border-color 0.3s;">
+                    <button class="btn" onclick="clearSearch()" style="padding: 12px 20px;">Clear</button>
+                </div>
+                <div id="searchResults" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">Search Results:</h4>
+                    <div id="searchResultsContent"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">🍳 Breakfast Recipes</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card">
+                            <h4>🥗 Green Power Bowl</h4>
+                            <p>Spinach, avocado, eggs, and hemp seeds for sustained energy</p>
+                            <div class="ingredients">Ingredients: Fresh spinach, 2 eggs, 1/2 avocado, hemp seeds, olive oil</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🥣 Protein Overnight Oats</h4>
+                            <p>Oats with protein powder and berries prep the night before</p>
+                            <div class="ingredients">Ingredients: Rolled oats, protein powder, almond milk, berries, chia seeds</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🍓 Berry Smoothie Bowl</h4>
+                            <p>Antioxidant-rich smoothie with superfood toppings</p>
+                            <div class="ingredients">Ingredients: Mixed berries, banana, greek yogurt, granola, coconut flakes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">🥙 Lunch Recipes</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card">
+                            <h4>🍖 Mediterranean Chicken</h4>
+                            <p>Grilled chicken with vegetables and healthy fats</p>
+                            <div class="ingredients">Ingredients: Chicken breast, olive oil, tomatoes, cucumber, olives, feta</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🐟 Salmon Salad</h4>
+                            <p>Omega-3 rich salmon over mixed greens</p>
+                            <div class="ingredients">Ingredients: Salmon fillet, mixed greens, quinoa, lemon, olive oil</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🥜 Power Wrap</h4>
+                            <p>Turkey and veggie wrap with hummus</p>
+                            <div class="ingredients">Ingredients: Whole wheat tortilla, turkey, hummus, vegetables, sprouts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">🍽️ Dinner Recipes</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card">
+                            <h4>🥩 Lean Beef Stir-fry</h4>
+                            <p>Protein-packed stir-fry with colorful vegetables</p>
+                            <div class="ingredients">Ingredients: Lean beef, broccoli, bell peppers, ginger, coconut aminos</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🍠 Sweet Potato Bowl</h4>
+                            <p>Roasted sweet potato with black beans and avocado</p>
+                            <div class="ingredients">Ingredients: Sweet potato, black beans, avocado, cilantro, lime</div>
+                        </div>
+                        <div class="recipe-card">
+                            <h4>🐟 Baked Cod</h4>
+                            <p>Flaky white fish with herbs and vegetables</p>
+                            <div class="ingredients">Ingredients: Cod fillet, asparagus, lemon, herbs, olive oil</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise Tab -->
+        <div id="exercise" class="tab-content">
+            <div class="section">
+                <div class="section-header">🏃‍♀️ Weekly Exercise Plan</div>
+                <div class="section-content">
+                    <div class="day-tracker">
+                        <div class="day-section">
+                            <h4>Monday - Strength Training</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Warm-up:</strong> 5 minutes light walking</li>
+                                <li><strong>Squats:</strong> 3 sets of 12</li>
+                                <li><strong>Push-ups:</strong> 3 sets of 8-12</li>
+                                <li><strong>Lunges:</strong> 3 sets of 10 each leg</li>
+                                <li><strong>Cool-down:</strong> 5 minutes stretching</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-section">
+                            <h4>Tuesday - Cardio</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Warm-up:</strong> 3 minutes easy pace</li>
+                                <li><strong>Brisk walk/jog:</strong> 20 minutes</li>
+                                <li><strong>Intervals:</strong> 5 x 1 minute fast pace</li>
+                                <li><strong>Cool-down:</strong> 5 minutes walking</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-section">
+                            <h4>Wednesday - Flexibility</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Yoga flow:</strong> 15 minutes</li>
+                                <li><strong>Core work:</strong> 10 minutes</li>
+                                <li><strong>Deep stretching:</strong> 10 minutes</li>
+                                <li><strong>Meditation:</strong> 5 minutes</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-section">
+                            <h4>Thursday - Strength Training</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Warm-up:</strong> 5 minutes movement</li>
+                                <li><strong>Deadlifts:</strong> 3 sets of 10</li>
+                                <li><strong>Rows:</strong> 3 sets of 12</li>
+                                <li><strong>Planks:</strong> 3 sets of 30 seconds</li>
+                                <li><strong>Cool-down:</strong> Gentle stretching</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-section">
+                            <h4>Friday - Active Recovery</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Gentle walk:</strong> 20 minutes</li>
+                                <li><strong>Stretching:</strong> 15 minutes</li>
+                                <li><strong>Foam rolling:</strong> 10 minutes</li>
+                                <li><strong>Relaxation:</strong> Focus on recovery</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-section">
+                            <h4>Weekend - Fun Activity</h4>
+                            <ul class="exercise-list">
+                                <li><strong>Choose:</strong> Dancing, hiking, swimming</li>
+                                <li><strong>Duration:</strong> 30-60 minutes</li>
+                                <li><strong>Focus:</strong> Enjoyment over intensity</li>
+                                <li><strong>Rest:</strong> Sunday can be full rest day</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Period Tracker Tab -->
+        <div id="period" class="tab-content">
+            <div class="section">
+                <div class="section-header">🌸 Period Tracker</div>
+                <div class="section-content">
+                    <div class="period-legend">
+                        <div class="period-legend-item">
+                            <div class="period-legend-color" style="background: #ff6b9d;"></div>
+                            <span>Period Days</span>
+                        </div>
+                        <div class="period-legend-item">
+                            <div class="period-legend-color" style="background: #4ecdc4;"></div>
+                            <span>Ovulation</span>
+                        </div>
+                        <div class="period-legend-item">
+                            <div class="period-legend-color" style="background: #ffe066;"></div>
+                            <span>Fertile Window</span>
+                        </div>
+                        <div class="period-legend-item">
+                            <div class="period-legend-color" style="background: white; border: 1px solid #ddd;"></div>
+                            <span>Regular Days</span>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 10px; text-align: center;" id="currentMonth">Current Month</h4>
+                    <div class="period-calendar" id="periodCalendar">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <button class="btn" onclick="previousMonth()">&lt; Previous</button>
+                        <button class="btn" onclick="nextMonth()">Next &gt;</button>
+                    </div>
+
+                    <div class="period-stats">
+                        <div class="period-stat">
+                            <div class="stat-number" id="cycleLength">28</div>
+                            <div class="stat-label">Average Cycle</div>
+                        </div>
+                        <div class="period-stat">
+                            <div class="stat-number" id="periodLength">5</div>
+                            <div class="stat-label">Period Days</div>
+                        </div>
+                        <div class="period-stat">
+                            <div class="stat-number" id="nextPeriod">-</div>
+                            <div class="stat-label">Next Period</div>
+                        </div>
+                        <div class="period-stat">
+                            <div class="stat-number" id="daysUntil">-</div>
+                            <div class="stat-label">Days Until</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Migraine Tracker Tab -->
+        <div id="migraine" class="tab-content">
+            <div class="section">
+                <div class="section-header">🧠 Migraine Tracker</div>
+                <div class="section-content">
+                    <div class="migraine-log">
+                        <h4 style="margin-bottom: 15px;">Log New Migraine</h4>
+                        <div class="migraine-form">
+                            <div class="form-group">
+                                <label for="migrainDate">Date & Time:</label>
+                                <input type="datetime-local" id="migrainDate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Pain Severity (1-10):</label>
+                                <div class="severity-scale">
+                                    <div class="severity-btn" data-severity="1">1</div>
+                                    <div class="severity-btn" data-severity="2">2</div>
+                                    <div class="severity-btn" data-severity="3">3</div>
+                                    <div class="severity-btn" data-severity="4">4</div>
+                                    <div class="severity-btn" data-severity="5">5</div>
+                                    <div class="severity-btn" data-severity="6">6</div>
+                                    <div class="severity-btn" data-severity="7">7</div>
+                                    <div class="severity-btn" data-severity="8">8</div>
+                                    <div class="severity-btn" data-severity="9">9</div>
+                                    <div class="severity-btn" data-severity="10">10</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="migraineDuration">Duration (hours):</label>
+                                <input type="number" id="migraineDuration" min="0.5" step="0.5" placeholder="e.g. 2.5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="migraineTriggers">Potential Triggers:</label>
+                                <select id="migraineTriggers">
+                                    <option value="">Select a trigger</option>
+                                    <option value="stress">Stress</option>
+                                    <option value="hormones">Hormonal changes</option>
+                                    <option value="weather">Weather changes</option>
+                                    <option value="food">Food/Drink</option>
+                                    <option value="sleep">Sleep issues</option>
+                                    <option value="screen">Screen time</option>
+                                    <option value="dehydration">Dehydration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="migraineSymptoms">Symptoms:</label>
+                                <textarea id="migraineSymptoms" placeholder="Describe your symptoms..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="migraineTreatment">Treatment Used:</label>
+                                <input type="text" id="migraineTreatment" placeholder="e.g. Ibuprofen, rest, cold compress">
+                            </div>
+
+                            <button class="btn" onclick="logMigraine()">Log Migraine</button>
+                        </div>
+                    </div>
+
+                    <div class="migraine-stats">
+                        <div class="migraine-stat">
+                            <div class="stat-number" id="migraineCount">0</div>
+                            <div class="stat-label">This Month</div>
+                        </div>
+                        <div class="migraine-stat">
+                            <div class="stat-number" id="avgSeverity">0</div>
+                            <div class="stat-label">Avg Severity</div>
+                        </div>
+                        <div class="migraine-stat">
+                            <div class="stat-number" id="avgDuration">0</div>
+                            <div class="stat-label">Avg Duration</div>
+                        </div>
+                        <div class="migraine-stat">
+                            <div class="stat-number" id="daysSince">-</div>
+                            <div class="stat-label">Days Since Last</div>
+                        </div>
+                    </div>
+
+                    <div class="migraine-entries" id="migraineEntries">
+                        <h4>Recent Migraines</h4>
+                        <p style="color: #666; text-align: center; margin: 20px 0;">No migraines logged yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guides Tab -->
+        <div id="guides" class="tab-content">
+            <div class="section">
+                <div class="section-header">📚 Troubleshooting Guides</div>
+                <div class="section-content">
+                    <div class="recipe-grid">
+                        <div class="recipe-card">
+                            <h4>😴 Sleep Issues</h4>
+                            <p>Can't sleep well? Try these tips:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>No screens 1 hour before bed</li>
+                                <li>Keep bedroom cool (65-68°F)</li>
+                                <li>Try magnesium supplement</li>
+                                <li>Practice 4-7-8 breathing</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-card">
+                            <h4>🍽️ Plateau Busting</h4>
+                            <p>Weight loss stalled? Try this:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>Change up your exercise routine</li>
+                                <li>Track portions more carefully</li>
+                                <li>Add strength training</li>
+                                <li>Check your stress levels</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-card">
+                            <h4>🧠 Managing Cravings</h4>
+                            <p>Fighting food cravings:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>Drink water first</li>
+                                <li>Wait 20 minutes</li>
+                                <li>Go for a walk</li>
+                                <li>Keep healthy snacks ready</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-card">
+                            <h4>💪 Energy Boosters</h4>
+                            <p>Feeling tired? Natural energy tips:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>Check your iron levels</li>
+                                <li>Stay hydrated</li>
+                                <li>Take short walks</li>
+                                <li>Eat protein with every meal</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-card">
+                            <h4>🔥 Metabolism Support</h4>
+                            <p>Boost your metabolism naturally:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>Eat protein at breakfast</li>
+                                <li>Drink green tea</li>
+                                <li>Build lean muscle</li>
+                                <li>Get adequate sleep</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-card">
+                            <h4>🎯 Staying Motivated</h4>
+                            <p>Keep your momentum going:</p>
+                            <ul style="margin-top: 10px; font-size: 0.85em;">
+                                <li>Take progress photos</li>
+                                <li>Celebrate small wins</li>
+                                <li>Find an accountability partner</li>
+                                <li>Focus on how you feel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping Tab -->
+        <div id="shopping" class="tab-content">
+            <div class="section">
+                <div class="section-header">🛒 Weekly Shopping List</div>
+                <div class="section-content">
+                    <div class="shopping-list">
+                        <div class="shopping-category">
+                            <h4>🥬 Vegetables</h4>
+                            <div id="vegetableMeals">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="spinach">
+                                    <label for="spinach">Fresh spinach</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="broccoli">
+                                    <label for="broccoli">Broccoli</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="bell-peppers">
+                                    <label for="bell-peppers">Bell peppers</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="avocados">
+                                    <label for="avocados">Avocados</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sweet-potatoes">
+                                    <label for="sweet-potatoes">Sweet potatoes</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <input type="text" id="customVegetable" placeholder="Add vegetable..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px; font-size: 0.9em;">
+                                <button class="btn" onclick="addCustomShoppingItem('vegetable')" style="padding: 8px 15px; font-size: 0.8em;">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="shopping-category">
+                            <h4>🍖 Proteins</h4>
+                            <div id="proteinMeals">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="chicken-breast">
+                                    <label for="chicken-breast">Chicken breast</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="salmon">
+                                    <label for="salmon">Fresh salmon</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="eggs">
+                                    <label for="eggs">Free-range eggs</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="turkey">
+                                    <label for="turkey">Lean turkey</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="greek-yogurt">
+                                    <label for="greek-yogurt">Greek yogurt</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <input type="text" id="customProtein" placeholder="Add protein..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px; font-size: 0.9em;">
+                                <button class="btn" onclick="addCustomShoppingItem('protein')" style="padding: 8px 15px; font-size: 0.8em;">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="shopping-category">
+                            <h4>🌾 Healthy Carbs</h4>
+                            <div id="carbMeals">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="oats">
+                                    <label for="oats">Steel-cut oats</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="quinoa">
+                                    <label for="quinoa">Quinoa</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="brown-rice">
+                                    <label for="brown-rice">Brown rice</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="whole-wheat">
+                                    <label for="whole-wheat">Whole wheat tortillas</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="black-beans">
+                                    <label for="black-beans">Black beans</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <input type="text" id="customCarb" placeholder="Add carb..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px; font-size: 0.9em;">
+                                <button class="btn" onclick="addCustomShoppingItem('carb')" style="padding: 8px 15px; font-size: 0.8em;">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="shopping-category">
+                            <h4>🥜 Healthy Fats</h4>
+                            <div id="fatMeals">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="olive-oil">
+                                    <label for="olive-oil">Extra virgin olive oil</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="nuts">
+                                    <label for="nuts">Mixed nuts</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="seeds">
+                                    <label for="seeds">Chia/hemp seeds</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="hummus">
+                                    <label for="hummus">Hummus</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <input type="text" id="customFat" placeholder="Add healthy fat..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px; font-size: 0.9em;">
+                                <button class="btn" onclick="addCustomShoppingItem('fat')" style="padding: 8px 15px; font-size: 0.8em;">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="shopping-category">
+                            <h4>🧴 Other Items</h4>
+                            <div id="otherMeals">
+                                <!-- Custom other items will be added here -->
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <input type="text" id="customOther" placeholder="Add other item..." style="width: 70%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px; font-size: 0.9em;">
+                                <button class="btn" onclick="addCustomShoppingItem('other')" style="padding: 8px 15px; font-size: 0.8em;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn" onclick="clearShoppingList()">Clear Completed Items</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedSeverity = null;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateDaysCount();
+            setupPeriodCalendar();
+            setupMigraineSeverityButtons();
+            loadMigraineData();
+            initializeDailyVerse();
+            setupRecipeSearch();
+            loadCustomMeals();
+            loadCustomShoppingItems();
+            
+            // Set default migraine date to now
+            document.getElementById('migrainDate').value = new Date().toISOString().slice(0, -8);
+        });
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Progress tracking
+        function loadProgress() {
+            const startDate = localStorage.getItem('resetStartDate');
+            const today = new Date().toDateString();
+            
+            if (!startDate || localStorage.getItem('lastVisit') !== today) {
+                // Reset daily checkboxes each day
+                const dailyCheckboxes = document.querySelectorAll('input[data-daily="true"]');
+                dailyCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.removeItem(checkbox.id);
+                });
+                localStorage.setItem('lastVisit', today);
+                
+                // Clean up old custom meals and exercises
+                const customMeals = JSON.parse(localStorage.getItem('customMeals') || '{}');
+                const customExercises = JSON.parse(localStorage.getItem('customExercises') || '{}');
+                const customShoppingItems = JSON.parse(localStorage.getItem('customShoppingItems') || '{}');
+                const cleanedMeals = {};
+                const cleanedExercises = {};
+                const cleanedShoppingItems = {};
+                if (customMeals[today]) {
+                    cleanedMeals[today] = customMeals[today];
+                }
+                if (customExercises[today]) {
+                    cleanedExercises[today] = customExercises[today];
+                }
+                if (customShoppingItems[today]) {
+                    cleanedShoppingItems[today] = customShoppingItems[today];
+                }
+                localStorage.setItem('customMeals', JSON.stringify(cleanedMeals));
+                localStorage.setItem('customExercises', JSON.stringify(cleanedExercises));
+                localStorage.setItem('customShoppingItems', JSON.stringify(cleanedShoppingItems));
+            }
+
+            // Load saved checkbox states
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const saved = localStorage.getItem(checkbox.id);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                });
+            });
+        }
+
+        function updateDaysCount() {
+            const startDate = localStorage.getItem('resetStartDate');
+            if (!startDate) {
+                localStorage.setItem('resetStartDate', new Date().toISOString());
+                document.getElementById('daysCount').textContent = '1';
+                document.getElementById('startDate').textContent = 'Started today!';
+                return;
+            }
+            
+            const start = new Date(startDate);
+            const today = new Date();
+            const diffTime = Math.abs(today - start);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            
+            document.getElementById('daysCount').textContent = diffDays;
+            document.getElementById('startDate').textContent = `Started ${start.toLocaleDateString('en-AU')}`;
+        }
+
+        function resetProgress() {
+            if (confirm('Are you sure you want to start a new reset journey? This will clear all progress.')) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+
+        function clearShoppingList() {
+            const checkboxes = document.querySelectorAll('#shopping input[type="checkbox"]:checked');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.removeItem(checkbox.id);
+            });
+        }
+
+        // Exercise Functions
+        function addCustomExercise() {
+            const input = document.getElementById('customExercise');
+            const exerciseText = input.value.trim();
+            
+            if (exerciseText === '') {
+                alert('Please enter an exercise');
+                return;
+            }
+            
+            const customId = `custom-exercise-${Date.now()}`;
+            
+            const checkboxDiv = document.createElement('div');
+            checkboxDiv.className = 'checkbox-item';
+            checkboxDiv.innerHTML = `
+                <input type="checkbox" id="${customId}" data-daily="true" data-exercise="true" data-custom="true">
+                <label for="${customId}">${exerciseText}</label>
+                <button onclick="removeCustomExercise('${customId}')" style="margin-left: auto; background: #ff6b6b; color: white; border: none; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; cursor: pointer;">✕</button>
+            `;
+            
+            document.getElementById('customExercises').appendChild(checkboxDiv);
+            
+            const newCheckbox = document.getElementById(customId);
+            newCheckbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+            
+            const customExercises = JSON.parse(localStorage.getItem('customExercises') || '{}');
+            const today = new Date().toDateString();
+            if (!customExercises[today]) {
+                customExercises[today] = [];
+            }
+            customExercises[today].push({
+                id: customId,
+                text: exerciseText
+            });
+            localStorage.setItem('customExercises', JSON.stringify(customExercises));
+            
+            input.value = '';
+        }
+
+        function removeCustomExercise(exerciseId) {
+            const element = document.getElementById(exerciseId).parentNode;
+            element.remove();
+            
+            localStorage.removeItem(exerciseId);
+            
+            const customExercises = JSON.parse(localStorage.getItem('customExercises') || '{}');
+            const today = new Date().toDateString();
+            if (customExercises[today]) {
+                customExercises[today] = customExercises[today].filter(exercise => exercise.id !== exerciseId);
+                if (customExercises[today].length === 0) {
+                    delete customExercises[today];
+                }
+                localStorage.setItem('customExercises', JSON.stringify(customExercises));
+            }
+        }
+
+        // Meal tracking functions
+        function addCustomMeal(mealType) {
+            const inputId = `custom${mealType.charAt(0).toUpperCase() + mealType.slice(1)}`;
+            const input = document.getElementById(inputId);
+            const mealText = input.value.trim();
+            
+            if (mealText === '') {
+                alert('Please enter a meal name');
+                return;
+            }
+            
+            const customId = `custom-${mealType}-${Date.now()}`;
+            const containerId = `${mealType}Meals`;
+            
+            const checkboxDiv = document.createElement('div');
+            checkboxDiv.className = 'checkbox-item';
+            checkboxDiv.innerHTML = `
+                <input type="checkbox" id="${customId}" data-meal="${mealType}" data-daily="true" data-custom="true">
+                <label for="${customId}">${mealText}</label>
+                <button onclick="removeCustomMeal('${customId}')" style="margin-left: auto; background: #ff6b6b; color: white; border: none; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; cursor: pointer;">✕</button>
+            `;
+            
+            document.getElementById(containerId).appendChild(checkboxDiv);
+            
+            const newCheckbox = document.getElementById(customId);
+            newCheckbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+            
+            const customMeals = JSON.parse(localStorage.getItem('customMeals') || '{}');
+            const today = new Date().toDateString();
+            if (!customMeals[today]) {
+                customMeals[today] = [];
+            }
+            customMeals[today].push({
+                id: customId,
+                text: mealText,
+                type: mealType
+            });
+            localStorage.setItem('customMeals', JSON.stringify(customMeals));
+            
+            input.value = '';
+        }
+
+        function removeCustomMeal(mealId) {
+            const element = document.getElementById(mealId).parentNode;
+            element.remove();
+            
+            localStorage.removeItem(mealId);
+            
+            const customMeals = JSON.parse(localStorage.getItem('customMeals') || '{}');
+            const today = new Date().toDateString();
+            if (customMeals[today]) {
+                customMeals[today] = customMeals[today].filter(meal => meal.id !== mealId);
+                if (customMeals[today].length === 0) {
+                    delete customMeals[today];
+                }
+                localStorage.setItem('customMeals', JSON.stringify(customMeals));
+            }
+        }
+
+        function loadCustomMeals() {
+            const customMeals = JSON.parse(localStorage.getItem('customMeals') || '{}');
+            const today = new Date().toDateString();
+            
+            if (customMeals[today]) {
+                customMeals[today].forEach(meal => {
+                    const containerId = `${meal.type}Meals`;
+                    const container = document.getElementById(containerId);
+                    
+                    if (container) {
+                        const checkboxDiv = document.createElement('div');
+                        checkboxDiv.className = 'checkbox-item';
+                        checkboxDiv.innerHTML = `
+                            <input type="checkbox" id="${meal.id}" data-meal="${meal.type}" data-daily="true" data-custom="true">
+                            <label for="${meal.id}">${meal.text}</label>
+                            <button onclick="removeCustomMeal('${meal.id}')" style="margin-left: auto; background: #ff6b6b; color: white; border: none; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; cursor: pointer;">✕</button>
+                        `;
+                        
+                        container.appendChild(checkboxDiv);
+                        
+                        const checkbox = document.getElementById(meal.id);
+                        checkbox.addEventListener('change', function() {
+                            localStorage.setItem(this.id, this.checked);
+                        });
+                        
+                        const saved = localStorage.getItem(meal.id);
+                        if (saved === 'true') {
+                            checkbox.checked = true;
+                        }
+                    }
+                });
+            }
+        }
+
+        // Period Tracker Functions
+        function setupPeriodCalendar() {
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        function generateCalendar(month, year) {
+            const calendar = document.getElementById('periodCalendar');
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+            
+            calendar.innerHTML = '';
+            
+            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayHeaders.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.textContent = day;
+                dayHeader.style.fontWeight = 'bold';
+                dayHeader.style.background = '#667eea';
+                dayHeader.style.color = 'white';
+                calendar.appendChild(dayHeader);
+            });
+            
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('period-day');
+                calendar.appendChild(emptyDay);
+            }
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('period-day');
+                dayElement.textContent = day;
+                dayElement.onclick = () => togglePeriodDay(dayElement, `${year}-${month+1}-${day}`);
+                
+                const dateKey = `${year}-${month+1}-${day}`;
+                const dayType = localStorage.getItem(`period-${dateKey}`);
+                if (dayType) {
+                    dayElement.classList.add(dayType);
+                }
+                
+                calendar.appendChild(dayElement);
+            }
+            
+            updatePeriodStats();
+        }
+
+        function togglePeriodDay(element, dateKey) {
+            element.classList.remove('period-day-active', 'ovulation-day', 'fertile-day');
+            
+            if (localStorage.getItem(`period-${dateKey}`) === 'period-day-active') {
+                localStorage.removeItem(`period-${dateKey}`);
+            } else {
+                element.classList.add('period-day-active');
+                localStorage.setItem(`period-${dateKey}`, 'period-day-active');
+            }
+            
+            updatePeriodStats();
+        }
+
+        function updatePeriodStats() {
+            const periodDays = [];
+            for (let key in localStorage) {
+                if (key.startsWith('period-') && localStorage[key] === 'period-day-active') {
+                    const date = key.replace('period-', '');
+                    periodDays.push(new Date(date));
+                }
+            }
+            
+            if (periodDays.length > 0) {
+                periodDays.sort((a, b) => a - b);
+                const lastPeriod = periodDays[periodDays.length - 1];
+                const nextPeriod = new Date(lastPeriod);
+                nextPeriod.setDate(nextPeriod.getDate() + 28);
+                
+                const today = new Date();
+                const daysUntil = Math.ceil((nextPeriod - today) / (1000 * 60 * 60 * 24));
+                
+                document.getElementById('nextPeriod').textContent = nextPeriod.toLocaleDateString('en-AU');
+                document.getElementById('daysUntil').textContent = daysUntil > 0 ? daysUntil : 'Overdue';
+            }
+        }
+
+        function previousMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        // Migraine Tracker Functions
+        function setupMigraineSeverityButtons() {
+            const severityButtons = document.querySelectorAll('.severity-btn');
+            severityButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    severityButtons.forEach(b => b.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedSeverity = this.dataset.severity;
+                });
+            });
+        }
+
+        function logMigraine() {
+            const date = document.getElementById('migrainDate').value;
+            const severity = selectedSeverity;
+            const duration = document.getElementById('migraineDuration').value;
+            const trigger = document.getElementById('migraineTriggers').value;
+            const symptoms = document.getElementById('migraineSymptoms').value;
+            const treatment = document.getElementById('migraineTreatment').value;
+            
+            if (!date || !severity) {
+                alert('Please fill in the date and severity level');
+                return;
+            }
+            
+            const migraine = {
+                date: new Date(date),
+                severity: parseInt(severity),
+                duration: parseFloat(duration) || 0,
+                trigger,
+                symptoms,
+                treatment,
+                timestamp: Date.now()
+            };
+            
+            const migraines = JSON.parse(localStorage.getItem('migraines') || '[]');
+            migraines.push(migraine);
+            localStorage.setItem('migraines', JSON.stringify(migraines));
+            
+            document.getElementById('migrainDate').value = new Date().toISOString().slice(0, -8);
+            document.querySelectorAll('.severity-btn').forEach(btn => btn.classList.remove('selected'));
+            selectedSeverity = null;
+            document.getElementById('migraineDuration').value = '';
+            document.getElementById('migraineTriggers').value = '';
+            document.getElementById('migraineSymptoms').value = '';
+            document.getElementById('migraineTreatment').value = '';
+            
+            loadMigraineData();
+            
+            alert('Migraine logged successfully!');
+        }
+
+        function loadMigraineData() {
+            const migraines = JSON.parse(localStorage.getItem('migraines') || '[]');
+            
+            const thisMonth = migraines.filter(m => {
+                const migrainerDate = new Date(m.date);
+                const now = new Date();
+                return migrainerDate.getMonth() === now.getMonth() && 
+                       migrainerDate.getFullYear() === now.getFullYear();
+            });
+            
+            document.getElementById('migraineCount').textContent = thisMonth.length;
+            
+            if (migraines.length > 0) {
+                const avgSeverity = migraines.reduce((sum, m) => sum + m.severity, 0) / migraines.length;
+                const avgDuration = migraines.reduce((sum, m) => sum + m.duration, 0) / migraines.length;
+                
+                document.getElementById('avgSeverity').textContent = avgSeverity.toFixed(1);
+                document.getElementById('avgDuration').textContent = avgDuration.toFixed(1) + 'h';
+                
+                migraines.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const daysSince = Math.floor((Date.now() - new Date(migraines[0].date)) / (1000 * 60 * 60 * 24));
+                document.getElementById('daysSince').textContent = daysSince;
+            }
+            
+            displayMigraines(migraines);
+        }
+
+        function displayMigraines(migraines) {
+            const container = document.getElementById('migraineEntries');
+            const recent = migraines.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+            
+            if (recent.length === 0) {
+                container.innerHTML = '<h4>Recent Migraines</h4><p style="color: #666; text-align: center; margin: 20px 0;">No migraines logged yet</p>';
+                return;
+            }
+            
+            let html = '<h4>Recent Migraines</h4>';
+            recent.forEach(migraine => {
+                const date = new Date(migraine.date);
+                html += `
+                    <div class="migraine-entry">
+                        <div class="migraine-entry-header">
+                            <div class="migraine-entry-date">${date.toLocaleDateString('en-AU')} ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                            <div class="migraine-entry-severity">Severity: ${migraine.severity}/10</div>
+                        </div>
+                        <div class="migraine-entry-details">
+                            ${migraine.duration ? `Duration: ${migraine.duration}h` : ''} 
+                            ${migraine.trigger ? `| Trigger: ${migraine.trigger}` : ''}
+                            ${migraine.symptoms ? `<br>Symptoms: ${migraine.symptoms}` : ''}
+                            ${migraine.treatment ? `<br>Treatment: ${migraine.treatment}` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Faith & Inspiration Functions
+        const bibleVerses = [
+            {
+                verse: "She is clothed with strength and dignity; she can laugh at the days to come.",
+                reference: "Proverbs 31:25"
+            },
+            {
+                verse: "I can do all this through him who gives me strength.",
+                reference: "Philippians 4:13"
+            },
+            {
+                verse: "He gives strength to the weary and increases the power of the weak.",
+                reference: "Isaiah 40:29"
+            },
+            {
+                verse: "Trust in the Lord with all your heart and lean not on your own understanding.",
+                reference: "Proverbs 3:5"
+            },
+            {
+                verse: "The Lord your God is with you, the Mighty Warrior who saves.",
+                reference: "Zephaniah 3:17"
+            },
+            {
+                verse: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+                reference: "Joshua 1:9"
+            },
+            {
+                verse: "Cast all your anxiety on him because he cares for you.",
+                reference: "1 Peter 5:7"
+            },
+            {
+                verse: "And we know that in all things God works for the good of those who love him.",
+                reference: "Romans 8:28"
+            },
+            {
+                verse: "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+                reference: "Psalm 28:7"
+            },
+            {
+                verse: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+                reference: "Philippians 4:6"
+            },
+            {
+                verse: "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+                reference: "Psalm 34:18"
+            },
+            {
+                verse: "Therefore do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own.",
+                reference: "Matthew 6:34"
+            }
+        ];
+
+        function initializeDailyVerse() {
+            const today = new Date().toDateString();
+            const savedDate = localStorage.getItem('dailyVerseDate');
+            
+            if (savedDate !== today) {
+                getNewVerse();
+                localStorage.setItem('dailyVerseDate', today);
+            } else {
+                const savedVerse = localStorage.getItem('dailyVerseText');
+                const savedReference = localStorage.getItem('dailyVerseReference');
+                
+                if (savedVerse && savedReference) {
+                    document.getElementById('dailyVerse').textContent = `"${savedVerse}"`;
+                    document.getElementById('verseReference').textContent = `- ${savedReference}`;
+                } else {
+                    getNewVerse();
+                }
+            }
+        }
+
+        function getNewVerse() {
+            const randomIndex = Math.floor(Math.random() * bibleVerses.length);
+            const selectedVerse = bibleVerses[randomIndex];
+            
+            document.getElementById('dailyVerse').textContent = `"${selectedVerse.verse}"`;
+            document.getElementById('verseReference').textContent = `- ${selectedVerse.reference}`;
+            
+            localStorage.setItem('dailyVerseText', selectedVerse.verse);
+            localStorage.setItem('dailyVerseReference', selectedVerse.reference);
+        }
+
+        // Recipe Search Functions
+        const allRecipes = [
+            { name: "Green Power Bowl", category: "Breakfast", ingredients: "Fresh spinach, 2 eggs, 1/2 avocado, hemp seeds, olive oil", description: "Spinach, avocado, eggs, and hemp seeds for sustained energy" },
+            { name: "Protein Overnight Oats", category: "Breakfast", ingredients: "Rolled oats, protein powder, almond milk, berries, chia seeds", description: "Oats with protein powder and berries prep the night before" },
+            { name: "Berry Smoothie Bowl", category: "Breakfast", ingredients: "Mixed berries, banana, greek yogurt, granola, coconut flakes", description: "Antioxidant-rich smoothie with superfood toppings" },
+            { name: "Mediterranean Chicken", category: "Lunch", ingredients: "Chicken breast, olive oil, tomatoes, cucumber, olives, feta", description: "Grilled chicken with vegetables and healthy fats" },
+            { name: "Salmon Salad", category: "Lunch", ingredients: "Salmon fillet, mixed greens, quinoa, lemon, olive oil", description: "Omega-3 rich salmon over mixed greens" },
+            { name: "Power Wrap", category: "Lunch", ingredients: "Whole wheat tortilla, turkey, hummus, vegetables, sprouts", description: "Turkey and veggie wrap with hummus" },
+            { name: "Lean Beef Stir-fry", category: "Dinner", ingredients: "Lean beef, broccoli, bell peppers, ginger, coconut aminos", description: "Protein-packed stir-fry with colorful vegetables" },
+            { name: "Sweet Potato Bowl", category: "Dinner", ingredients: "Sweet potato, black beans, avocado, cilantro, lime", description: "Roasted sweet potato with black beans and avocado" },
+            { name: "Baked Cod", category: "Dinner", ingredients: "Cod fillet, asparagus, lemon, herbs, olive oil", description: "Flaky white fish with herbs and vegetables" }
+        ];
+
+        function setupRecipeSearch() {
+            const searchInput = document.getElementById('recipeSearch');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                if (searchTerm.length >= 2) {
+                    searchRecipes(searchTerm);
+                } else {
+                    hideSearchResults();
+                }
+            });
+
+            searchInput.addEventListener('focus', function() {
+                this.style.borderColor = '#667eea';
+            });
+            searchInput.addEventListener('blur', function() {
+                this.style.borderColor = '#f0f0f0';
+            });
+        }
+
+        function searchRecipes(searchTerm) {
+            const results = allRecipes.filter(recipe => 
+                recipe.name.toLowerCase().includes(searchTerm) ||
+                recipe.ingredients.toLowerCase().includes(searchTerm) ||
+                recipe.description.toLowerCase().includes(searchTerm) ||
+                recipe.category.toLowerCase().includes(searchTerm)
+            );
+
+            displaySearchResults(results);
+        }
+
+        function displaySearchResults(results) {
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsContent = document.getElementById('searchResultsContent');
+            
+            if (results.length === 0) {
+                searchResultsContent.innerHTML = '<p style="color: #666; text-align: center;">No recipes found matching your search.</p>';
+            } else {
+                let html = '<div class="recipe-grid">';
+                results.forEach(recipe => {
+                    html += `
+                        <div class="recipe-card">
+                            <h4>🍽️ ${recipe.name}</h4>
+                            <p><strong>Category:</strong> ${recipe.category}</p>
+                            <p>${recipe.description}</p>
+                            <div class="ingredients">Ingredients: ${recipe.ingredients}</div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                searchResultsContent.innerHTML = html;
+            }
+            
+            searchResults.style.display = 'block';
+        }
+
+        function hideSearchResults() {
+            document.getElementById('searchResults').style.display = 'none';
+        }
+
+        function clearSearch() {
+            document.getElementById('recipeSearch').value = '';
+            hideSearchResults();
+        }
+
+        // Custom Shopping Item Functions
+        function addCustomShoppingItem(itemType) {
+            const inputId = `custom${itemType.charAt(0).toUpperCase() + itemType.slice(1)}`;
+            const input = document.getElementById(inputId);
+            const itemText = input.value.trim();
+            
+            if (itemText === '') {
+                alert('Please enter an item name');
+                return;
+            }
+            
+            const customId = `custom-shopping-${itemType}-${Date.now()}`;
+            const containerId = `${itemType}Meals`;
+            
+            const checkboxDiv = document.createElement('div');
+            checkboxDiv.className = 'checkbox-item';
+            checkboxDiv.innerHTML = `
+                <input type="checkbox" id="${customId}" data-shopping="${itemType}" data-custom="true">
+                <label for="${customId}">${itemText}</label>
+                <button onclick="removeCustomShoppingItem('${customId}')" style="margin-left: auto; background: #ff6b6b; color: white; border: none; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; cursor: pointer;">✕</button>
+            `;
+            
+            document.getElementById(containerId).appendChild(checkboxDiv);
+            
+            const newCheckbox = document.getElementById(customId);
+            newCheckbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+            
+            const customShoppingItems = JSON.parse(localStorage.getItem('customShoppingItems') || '{}');
+            const today = new Date().toDateString();
+            if (!customShoppingItems[today]) {
+                customShoppingItems[today] = [];
+            }
+            customShoppingItems[today].push({
+                id: customId,
+                text: itemText,
+                type: itemType
+            });
+            localStorage.setItem('customShoppingItems', JSON.stringify(customShoppingItems));
+            
+            input.value = '';
+        }
+
+        function removeCustomShoppingItem(itemId) {
+            const element = document.getElementById(itemId).parentNode;
+            element.remove();
+            
+            localStorage.removeItem(itemId);
+            
+            const customShoppingItems = JSON.parse(localStorage.getItem('customShoppingItems') || '{}');
+            const today = new Date().toDateString();
+            if (customShoppingItems[today]) {
+                customShoppingItems[today] = customShoppingItems[today].filter(item => item.id !== itemId);
+                if (customShoppingItems[today].length === 0) {
+                    delete customShoppingItems[today];
+                }
+                localStorage.setItem('customShoppingItems', JSON.stringify(customShoppingItems));
+            }
+        }
+
+        function loadCustomShoppingItems() {
+            const customShoppingItems = JSON.parse(localStorage.getItem('customShoppingItems') || '{}');
+            const today = new Date().toDateString();
+            
+            if (customShoppingItems[today]) {
+                customShoppingItems[today].forEach(item => {
+                    const containerId = `${item.type}Meals`;
+                    const container = document.getElementById(containerId);
+                    
+                    if (container) {
+                        const checkboxDiv = document.createElement('div');
+                        checkboxDiv.className = 'checkbox-item';
+                        checkboxDiv.innerHTML = `
+                            <input type="checkbox" id="${item.id}" data-shopping="${item.type}" data-custom="true">
+                            <label for="${item.id}">${item.text}</label>
+                            <button onclick="removeCustomShoppingItem('${item.id}')" style="margin-left: auto; background: #ff6b6b; color: white; border: none; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; cursor: pointer;">✕</button>
+                        `;
+                        
+                        container.appendChild(checkboxDiv);
+                        
+                        const checkbox = document.getElementById(item.id);
+                        checkbox.addEventListener('change', function() {
+                            localStorage.setItem(this.id, this.checked);
+                        });
+                        
+                        const saved = localStorage.getItem(item.id);
+                        if (saved === 'true') {
+                            checkbox.checked = true;
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
