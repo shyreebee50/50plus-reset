@@ -19,7 +19,6 @@
             padding-bottom: 80px;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
             color: white;
@@ -39,7 +38,6 @@
             opacity: 0.9;
         }
 
-        /* Navigation */
         .nav-tabs {
             display: flex;
             overflow-x: auto;
@@ -70,7 +68,6 @@
             background: rgba(16, 185, 129, 0.05);
         }
 
-        /* Content Sections */
         .section {
             display: none;
             padding: 1rem;
@@ -96,7 +93,6 @@
             font-weight: 500;
         }
 
-        /* Cards */
         .card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
@@ -107,7 +103,6 @@
             box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
         }
 
-        /* Buttons */
         .btn {
             background: linear-gradient(135deg, #10b981, #34d399);
             color: white;
@@ -131,7 +126,6 @@
             font-size: 0.8rem;
         }
 
-        /* Input Fields */
         .input-group {
             display: flex;
             gap: 0.5rem;
@@ -155,7 +149,6 @@
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
-        /* Fasting Window Display */
         .fasting-window {
             background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
             border-radius: 16px;
@@ -182,7 +175,6 @@
             color: #059669;
         }
 
-        /* Goals Section */
         .goals-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -217,7 +209,6 @@
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
         }
 
-        /* Meals Section */
         .meals-grid {
             display: grid;
             gap: 0.8rem;
@@ -255,7 +246,6 @@
             color: #059669;
         }
 
-        /* Recipe Cards */
         .recipe-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,7 +296,6 @@
             font-weight: 500;
         }
 
-        /* Faith Section */
         .verse-card {
             background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
             border: 1px solid rgba(34, 197, 94, 0.15);
@@ -330,7 +319,6 @@
             text-align: right;
         }
 
-        /* Exercise Cards */
         .exercise-card {
             background: rgba(255, 255, 255, 0.8);
             border-radius: 16px;
@@ -370,7 +358,6 @@
             transform: translateY(-1px);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-tabs {
                 padding: 0 0.2rem;
@@ -390,7 +377,6 @@
             }
         }
 
-        /* Animations */
         @keyframes gentle-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.02); }
@@ -400,7 +386,6 @@
             animation: gentle-pulse 2s ease-in-out infinite;
         }
 
-        /* Utilities */
         .text-center { text-align: center; }
         .mb-1 { margin-bottom: 1rem; }
         .mt-1 { margin-top: 1rem; }
@@ -572,26 +557,6 @@
                     <span class="recipe-tag">5 min</span>
                 </div>
             </div>
-
-            <div class="recipe-card" onclick="showRecipe('almond-flour-pancakes')">
-                <div class="recipe-title">Fluffy Almond Pancakes</div>
-                <div class="recipe-description">Almond flour, eggs, coconut milk - no sugar added</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">Grain Free</span>
-                    <span class="recipe-tag">Weekend Treat</span>
-                    <span class="recipe-tag">15 min</span>
-                </div>
-            </div>
-
-            <div class="recipe-card" onclick="showRecipe('veggie-frittata')">
-                <div class="recipe-title">Garden Vegetable Frittata</div>
-                <div class="recipe-description">Eggs with bell peppers, spinach, herbs</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">Make Ahead</span>
-                    <span class="recipe-tag">Protein Rich</span>
-                    <span class="recipe-tag">Vegetarian</span>
-                </div>
-            </div>
         </div>
 
         <h3>🥗 Light Meals & Snacks</h3>
@@ -625,26 +590,6 @@
                     <span class="recipe-tag">Cortisol Support</span>
                 </div>
             </div>
-
-            <div class="recipe-card" onclick="showRecipe('avocado-toast')">
-                <div class="recipe-title">Seed Bread Avocado Toast</div>
-                <div class="recipe-description">Homemade seed bread with smashed avocado</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">Healthy Fats</span>
-                    <span class="recipe-tag">Fiber</span>
-                    <span class="recipe-tag">No Gluten</span>
-                </div>
-            </div>
-
-            <div class="recipe-card" onclick="showRecipe('nut-energy-balls')">
-                <div class="recipe-title">Coconut Energy Balls</div>
-                <div class="recipe-description">Dates, almonds, coconut - natural sweetness</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">No Bake</span>
-                    <span class="recipe-tag">Energy Boost</span>
-                    <span class="recipe-tag">Natural Sweet</span>
-                </div>
-            </div>
         </div>
 
         <h3>🌙 Nourishing Dinners</h3>
@@ -676,26 +621,6 @@
                     <span class="recipe-tag">Healing</span>
                     <span class="recipe-tag">Gut Health</span>
                     <span class="recipe-tag">Warming</span>
-                </div>
-            </div>
-
-            <div class="recipe-card" onclick="showRecipe('cauliflower-rice')">
-                <div class="recipe-title">Cauliflower Rice Stir-Fry</div>
-                <div class="recipe-description">Cauliflower rice with vegetables and ginger</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">Low Carb</span>
-                    <span class="recipe-tag">Anti-inflammatory</span>
-                    <span class="recipe-tag">15 min</span>
-                </div>
-            </div>
-
-            <div class="recipe-card" onclick="showRecipe('turkey-lettuce-wraps')">
-                <div class="recipe-title">Turkey Lettuce Wraps</div>
-                <div class="recipe-description">Ground turkey with Asian flavors in butter lettuce</div>
-                <div class="recipe-tags">
-                    <span class="recipe-tag">Low Carb</span>
-                    <span class="recipe-tag">Fresh</span>
-                    <span class="recipe-tag">Protein Rich</span>
                 </div>
             </div>
         </div>
@@ -743,46 +668,9 @@
         </div>
     </div>
 
-    <!-- PLACEHOLDER SECTIONS (Part 2 will fill these) -->
-    <div id="progress" class="section">
-        <h2>📊 Progress Tracker</h2>
-        <div class="card">
-            <p>Loading progress tracker...</p>
-        </div>
-    </div>
-
-    <div id="period" class="section">
-        <h2>🌸 Cycle Tracker</h2>
-        <div class="card">
-            <p>Loading cycle tracker...</p>
-        </div>
-    </div>
-
-    <div id="migraine" class="section">
-        <h2>🧠 Migraine Tracker</h2>
-        <div class="card">
-            <p>Loading migraine tracker...</p>
-        </div>
-    </div>
-
-    <div id="guides" class="section">
-        <h2>📖 Wellness Guides</h2>
-        <div class="card">
-            <p>Loading wellness guides...</p>
-        </div>
-    </div>
-
-    <div id="shopping" class="section">
-        <h2>🛒 Smart Shopping List</h2>
-        <div class="card">
-            <p>Loading shopping list...</p>
-        </div>
-    </div>
-
     <script>
         // Global variables
         let onCycle = false;
-        let dailyGoals = [];
         let mealLog = {};
         let exerciseComplete = {};
 
@@ -793,29 +681,20 @@
             loadReflection();
         });
 
-        // Section Navigation
         function showSection(sectionId) {
-            // Hide all sections
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Remove active class from all tabs
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Show selected section
             document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked tab
             event.target.classList.add('active');
-            
-            // Save current section
             localStorage.setItem('currentSection', sectionId);
         }
 
-        // Fasting Window Toggle
         function toggleFastingWindow() {
             onCycle = !onCycle;
             updateFastingWindow();
@@ -833,19 +712,16 @@
             }
         }
 
-        // Goals Management
         function toggleGoal(element) {
             element.classList.toggle('completed');
             saveData();
             
-            // Add gentle animation
             element.style.transform = 'scale(1.1)';
             setTimeout(() => {
                 element.style.transform = 'scale(1)';
             }, 150);
         }
 
-        // Meal Logging
         function toggleMeal(element, mealType) {
             const isLogged = element.classList.contains('logged');
             
@@ -862,7 +738,6 @@
             saveData();
         }
 
-        // Exercise Completion
         function markExerciseComplete(button) {
             if (button.classList.contains('completed')) {
                 button.classList.remove('completed');
@@ -873,7 +748,6 @@
                 button.textContent = '✓ Completed!';
                 button.style.background = 'linear-gradient(135deg, #10b981, #34d399)';
                 
-                // Celebration animation
                 button.style.transform = 'scale(1.1)';
                 setTimeout(() => {
                     button.style.transform = 'scale(1)';
@@ -882,7 +756,6 @@
             saveData();
         }
 
-        // Faith Section Functions
         function saveReflection() {
             const reflection = document.getElementById('dailyReflection').value;
             localStorage.setItem('dailyReflection', reflection);
@@ -895,13 +768,10 @@
             }
         }
 
-        // Recipe Display (placeholder - you can expand this)
         function showRecipe(recipeId) {
-            // This is a placeholder - you can expand to show full recipes
             alert(`Opening ${recipeId} recipe! (You can expand this feature)`);
         }
 
-        // Data Persistence
         function saveData() {
             const data = {
                 onCycle: onCycle,
@@ -917,20 +787,17 @@
             if (saved) {
                 const data = JSON.parse(saved);
                 
-                // Check if data is from today
                 if (data.date === new Date().toDateString()) {
                     onCycle = data.onCycle || false;
                     mealLog = data.mealLog || {};
                     exerciseComplete = data.exerciseComplete || {};
                     
-                    // Restore UI state
                     restoreUIState();
                 }
             }
         }
 
         function restoreUIState() {
-            // Restore meal states
             Object.keys(mealLog).forEach(mealType => {
                 if (mealLog[mealType]) {
                     const mealElement = document.querySelector(`[onclick*="${mealType}"]`);
@@ -946,3 +813,670 @@
     </script>
 </body>
 </html>
+<!-- PROGRESS TRACKER SECTION -->
+    <div id="progress" class="section">
+        <h2>📊 Progress Tracker</h2>
+
+        <div class="card">
+            <h3>⚖️ Weight Tracker</h3>
+            <div class="input-group">
+                <input type="number" class="input-field" id="weightInput" placeholder="Enter weight" step="0.1">
+                <button class="btn btn-small" onclick="addWeight()">Add Weight</button>
+            </div>
+            <div id="weightHistory" style="margin-top: 1rem;">
+                <p style="color: #6b7280;">No weight entries yet</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📏 Measurements Tracker</h3>
+            <div style="display: grid; gap: 0.5rem;">
+                <div class="input-group">
+                    <input type="number" class="input-field" id="waistInput" placeholder="Waist (inches)" step="0.1">
+                    <button class="btn btn-small" onclick="addMeasurement('waist')">Add Waist</button>
+                </div>
+                <div class="input-group">
+                    <input type="number" class="input-field" id="hipsInput" placeholder="Hips (inches)" step="0.1">
+                    <button class="btn btn-small" onclick="addMeasurement('hips')">Add Hips</button>
+                </div>
+                <div class="input-group">
+                    <input type="number" class="input-field" id="armsInput" placeholder="Arms (inches)" step="0.1">
+                    <button class="btn btn-small" onclick="addMeasurement('arms')">Add Arms</button>
+                </div>
+            </div>
+            <div id="measurementHistory" style="margin-top: 1rem;">
+                <p style="color: #6b7280;">No measurements yet</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📸 Progress Photos</h3>
+            <p style="color: #059669; margin-bottom: 1rem;">Track your transformation with photos</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                <div style="aspect-ratio: 3/4; background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #6b7280; cursor: pointer; border: 2px dashed rgba(16, 185, 129, 0.3); transition: all 0.3s ease; text-align: center; font-size: 0.9rem;" onclick="addPhoto('front')" id="frontPhoto">
+                    📷<br>Front View<br><small>Tap to add</small>
+                </div>
+                <div style="aspect-ratio: 3/4; background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #6b7280; cursor: pointer; border: 2px dashed rgba(16, 185, 129, 0.3); transition: all 0.3s ease; text-align: center; font-size: 0.9rem;" onclick="addPhoto('side')" id="sidePhoto">
+                    📷<br>Side View<br><small>Tap to add</small>
+                </div>
+            </div>
+            <input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="handlePhotoUpload()">
+        </div>
+    </div>
+
+    <!-- PERIOD TRACKER SECTION -->
+    <div id="period" class="section">
+        <h2>🌸 Cycle Tracker</h2>
+
+        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #fef7ff, #f3e8ff); border: 2px solid rgba(168, 85, 247, 0.15); box-shadow: 0 8px 30px rgba(168, 85, 247, 0.1); border-radius: 20px; margin: 1rem 0;">
+            <div style="font-size: 2rem; font-weight: 600; color: #7c3aed; margin-bottom: 0.5rem;" id="currentCycleDay">Day 1</div>
+            <div style="color: #8b5cf6; font-weight: 500; margin-bottom: 1rem;" id="currentPhase">Menstrual Phase</div>
+            <div style="color: #a855f7; margin-bottom: 1rem;">Track your cycle for better hormone balance</div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 12px;">
+                    <div style="font-size: 1.3rem; font-weight: 600; color: #7c3aed;" id="avgCycleLength">28</div>
+                    <div style="font-size: 0.8rem; color: #047857; margin-top: 0.2rem;">Average Cycle</div>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 12px;">
+                    <div style="font-size: 1.3rem; font-weight: 600; color: #7c3aed;" id="periodDays">5</div>
+                    <div style="font-size: 0.8rem; color: #047857; margin-top: 0.2rem;">Period Days</div>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 12px;">
+                    <div style="font-size: 1.3rem; font-weight: 600; color: #7c3aed;" id="nextPeriod">23</div>
+                    <div style="font-size: 0.8rem; color: #047857; margin-top: 0.2rem;">Days Until</div>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 12px;">
+                    <div style="font-size: 1.3rem; font-weight: 600; color: #7c3aed;" id="lastPeriod">5</div>
+                    <div style="font-size: 0.8rem; color: #047857; margin-top: 0.2rem;">Last Period</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📅 Update Cycle Info</h3>
+            <div class="input-group">
+                <input type="number" class="input-field" id="cycleLengthInput" placeholder="Cycle length (days)" value="28">
+                <button class="btn btn-small" onclick="updateCycleLength()">Update</button>
+            </div>
+            <div class="input-group">
+                <input type="date" class="input-field" id="lastPeriodDate" placeholder="Last period start">
+                <button class="btn btn-small" onclick="updateLastPeriod()">Update</button>
+            </div>
+            <div class="input-group">
+                <input type="number" class="input-field" id="periodLengthInput" placeholder="Period length (days)" value="5">
+                <button class="btn btn-small" onclick="updatePeriodLength()">Update</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🌡️ Symptoms Tracker</h3>
+            <div class="goals-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="goal-item" onclick="toggleSymptom(this, 'cramps')">
+                    <div>😣</div>
+                    <div>Cramps</div>
+                </div>
+                <div class="goal-item" onclick="toggleSymptom(this, 'headache')">
+                    <div>🤕</div>
+                    <div>Headache</div>
+                </div>
+                <div class="goal-item" onclick="toggleSymptom(this, 'bloating')">
+                    <div>🤰</div>
+                    <div>Bloating</div>
+                </div>
+                <div class="goal-item" onclick="toggleSymptom(this, 'mood')">
+                    <div>😢</div>
+                    <div>Mood Changes</div>
+                </div>
+                <div class="goal-item" onclick="toggleSymptom(this, 'fatigue')">
+                    <div>😴</div>
+                    <div>Fatigue</div>
+                </div>
+                <div class="goal-item" onclick="toggleSymptom(this, 'cravings')">
+                    <div>🍫</div>
+                    <div>Cravings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MIGRAINE TRACKER SECTION -->
+    <div id="migraine" class="section">
+        <h2>🧠 Migraine Tracker</h2>
+
+        <div class="card" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 1px solid rgba(59, 130, 246, 0.15);">
+            <h3 style="color: #1e40af;">📊 Current Status</h3>
+            <div style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem; color: #10b981; font-weight: 600;" id="migraineDays">0</div>
+                <div style="color: #059669; font-weight: 500; font-size: 1.2rem;">Days since last migraine</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Log New Migraine</h3>
+            <div class="input-group">
+                <select class="input-field" id="painLevel">
+                    <option value="">Pain Level</option>
+                    <option value="1">1 - Mild</option>
+                    <option value="2">2 - Mild-Moderate</option>
+                    <option value="3">3 - Moderate</option>
+                    <option value="4">4 - Moderate-Severe</option>
+                    <option value="5">5 - Severe</option>
+                </select>
+                <button class="btn btn-small" onclick="logMigraine()">Log</button>
+            </div>
+            
+            <div style="margin: 1rem 0;">
+                <h4 style="color: #047857; margin-bottom: 0.5rem;">Common Triggers</h4>
+                <div class="goals-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="goal-item" onclick="toggleTrigger(this, 'stress')">
+                        <div>😰</div>
+                        <div>Stress</div>
+                    </div>
+                    <div class="goal-item" onclick="toggleTrigger(this, 'sleep')">
+                        <div>😴</div>
+                        <div>Poor Sleep</div>
+                    </div>
+                    <div class="goal-item" onclick="toggleTrigger(this, 'hormones')">
+                        <div>🌸</div>
+                        <div>Hormonal</div>
+                    </div>
+                    <div class="goal-item" onclick="toggleTrigger(this, 'food')">
+                        <div>🍷</div>
+                        <div>Food/Drink</div>
+                    </div>
+                    <div class="goal-item" onclick="toggleTrigger(this, 'weather')">
+                        <div>🌦️</div>
+                        <div>Weather</div>
+                    </div>
+                    <div class="goal-item" onclick="toggleTrigger(this, 'dehydration')">
+                        <div>💧</div>
+                        <div>Dehydration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📈 Migraine History</h3>
+            <div id="migrainerHistory">
+                <p style="color: #6b7280;">No migraines logged yet</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GUIDES SECTION -->
+    <div id="guides" class="section">
+        <h2>📖 Wellness Guides</h2>
+
+        <div class="recipe-card" onclick="showGuide('cortisol')">
+            <div class="recipe-title">🌿 Cortisol Reduction Guide</div>
+            <div class="recipe-description">Natural ways to lower stress hormones for better health</div>
+            <div class="recipe-tags">
+                <span class="recipe-tag">Stress Relief</span>
+                <span class="recipe-tag">Hormones</span>
+            </div>
+        </div>
+
+        <div class="recipe-card" onclick="showGuide('intermittent-fasting')">
+            <div class="recipe-title">⏰ Intermittent Fasting for 50+</div>
+            <div class="recipe-description">Safe and effective fasting strategies for mature women</div>
+            <div class="recipe-tags">
+                <span class="recipe-tag">Weight Loss</span>
+                <span class="recipe-tag">Metabolism</span>
+            </div>
+        </div>
+
+        <div class="recipe-card" onclick="showGuide('hormone-balance')">
+            <div class="recipe-title">⚖️ Hormone Balance Naturally</div>
+            <div class="recipe-description">Food and lifestyle choices for hormonal harmony</div>
+            <div class="recipe-tags">
+                <span class="recipe-tag">Menopause</span>
+                <span class="recipe-tag">Natural Health</span>
+            </div>
+        </div>
+
+        <div class="recipe-card" onclick="showGuide('sleep-optimization')">
+            <div class="recipe-title">😴 Sleep Optimization</div>
+            <div class="recipe-description">Improve sleep quality for better metabolism and mood</div>
+            <div class="recipe-tags">
+                <span class="recipe-tag">Sleep</span>
+                <span class="recipe-tag">Recovery</span>
+            </div>
+        </div>
+
+        <div class="recipe-card" onclick="showGuide('gut-health')">
+            <div class="recipe-title">🦠 Gut Health Reset</div>
+            <div class="recipe-description">Heal your gut for better digestion and immunity</div>
+            <div class="recipe-tags">
+                <span class="recipe-tag">Digestion</span>
+                <span class="recipe-tag">Healing</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOPPING LIST SECTION -->
+    <div id="shopping" class="section">
+        <h2>🛒 Smart Shopping List</h2>
+        
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-small" onclick="generateShoppingList()">📝 Generate from Meals</button>
+            <button class="btn btn-small" onclick="exportShoppingList()" style="background: rgba(16, 185, 129, 0.2); color: #047857;">📤 Export List</button>
+            <button class="btn btn-small" onclick="clearShoppingList()" style="background: rgba(239, 68, 68, 0.2); color: #dc2626;">🗑️ Clear All</button>
+        </div>
+
+        <div class="card">
+            <h3>🥬 Vegetables & Fruits</h3>
+            <div id="vegetablesCategory" style="margin: 1.5rem 0;">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🥩 Proteins</h3>
+            <div id="proteinsCategory" style="margin: 1.5rem 0;">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🥛 Pantry Staples</h3>
+            <div id="pantryCategory" style="margin: 1.5rem 0;">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>➕ Add Custom Item</h3>
+            <div class="input-group">
+                <input type="text" class="input-field" id="customItemInput" placeholder="Add your own item...">
+                <select class="input-field" id="customCategory" style="flex: 0.7;">
+                    <option value="vegetables">Vegetables</option>
+                    <option value="proteins">Proteins</option>
+                    <option value="pantry">Pantry</option>
+                </select>
+                <button class="btn btn-small" onclick="addCustomItem()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD THIS JAVASCRIPT BEFORE THE CLOSING </script> TAG -->
+    <script>
+        // Additional variables for Part 2
+        let weightHistory = [];
+        let measurementHistory = {};
+        let cycleData = {
+            avgLength: 28,
+            lastPeriod: null,
+            periodLength: 5
+        };
+        let migraines = [];
+        let shoppingList = {
+            vegetables: ['Spinach', 'Avocados', 'Cucumber', 'Broccoli', 'Zucchini', 'Sweet Potatoes', 'Bell Peppers', 'Cauliflower'],
+            proteins: ['Wild Salmon', 'Pasture Eggs', 'Almond Butter', 'Bone Broth', 'Organic Chicken', 'Grass-fed Beef'],
+            pantry: ['Coconut Oil', 'Olive Oil', 'Chia Seeds', 'Turmeric', 'Ginger', 'Apple Cider Vinegar', 'Himalayan Salt']
+        };
+
+        // Progress Tracker Functions
+        function addWeight() {
+            const weight = document.getElementById('weightInput').value;
+            if (weight) {
+                const entry = {
+                    weight: parseFloat(weight),
+                    date: new Date().toLocaleDateString()
+                };
+                weightHistory.push(entry);
+                displayWeightHistory();
+                document.getElementById('weightInput').value = '';
+                saveProgressData();
+            }
+        }
+
+        function addMeasurement(type) {
+            const input = document.getElementById(type + 'Input');
+            const value = input.value;
+            if (value) {
+                if (!measurementHistory[type]) measurementHistory[type] = [];
+                measurementHistory[type].push({
+                    measurement: parseFloat(value),
+                    date: new Date().toLocaleDateString()
+                });
+                displayMeasurementHistory();
+                input.value = '';
+                saveProgressData();
+            }
+        }
+
+        function displayWeightHistory() {
+            const container = document.getElementById('weightHistory');
+            if (weightHistory.length === 0) {
+                container.innerHTML = '<p style="color: #6b7280;">No weight entries yet</p>';
+                return;
+            }
+            
+            let html = '';
+            weightHistory.slice(-5).reverse().forEach(entry => {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(255, 255, 255, 0.7); border-radius: 12px; margin: 0.5rem 0; border: 1px solid rgba(34, 197, 94, 0.1);">
+                        <span>${entry.date}</span>
+                        <span style="font-weight: 600; color: #10b981; font-size: 1.1rem;">${entry.weight} lbs</span>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function displayMeasurementHistory() {
+            const container = document.getElementById('measurementHistory');
+            let html = '';
+            
+            Object.keys(measurementHistory).forEach(type => {
+                const latest = measurementHistory[type][measurementHistory[type].length - 1];
+                if (latest) {
+                    html += `
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(255, 255, 255, 0.7); border-radius: 12px; margin: 0.5rem 0; border: 1px solid rgba(34, 197, 94, 0.1);">
+                            <span>${type.charAt(0).toUpperCase() + type.slice(1)} (${latest.date})</span>
+                            <span style="font-weight: 600; color: #10b981; font-size: 1.1rem;">${latest.measurement}"</span>
+                        </div>
+                    `;
+                }
+            });
+            
+            container.innerHTML = html || '<p style="color: #6b7280;">No measurements yet</p>';
+        }
+
+        // Period Tracker Functions
+        function updateCycleLength() {
+            const length = document.getElementById('cycleLengthInput').value;
+            if (length) {
+                cycleData.avgLength = parseInt(length);
+                updateCycleDisplay();
+                saveCycleData();
+            }
+        }
+
+        function updateLastPeriod() {
+            const date = document.getElementById('lastPeriodDate').value;
+            if (date) {
+                cycleData.lastPeriod = new Date(date);
+                updateCycleDisplay();
+                saveCycleData();
+            }
+        }
+
+        function updatePeriodLength() {
+            const length = document.getElementById('periodLengthInput').value;
+            if (length) {
+                cycleData.periodLength = parseInt(length);
+                updateCycleDisplay();
+                saveCycleData();
+            }
+        }
+
+        function updateCycleDisplay() {
+            if (!cycleData.lastPeriod) return;
+            
+            const today = new Date();
+            const lastPeriod = new Date(cycleData.lastPeriod);
+            const daysSince = Math.floor((today - lastPeriod) / (1000 * 60 * 60 * 24));
+            const cycleDay = (daysSince % cycleData.avgLength) + 1;
+            const daysUntilNext = cycleData.avgLength - (daysSince % cycleData.avgLength);
+            
+            document.getElementById('currentCycleDay').textContent = `Day ${cycleDay}`;
+            document.getElementById('lastPeriod').textContent = daysSince;
+            document.getElementById('nextPeriod').textContent = daysUntilNext;
+            document.getElementById('avgCycleLength').textContent = cycleData.avgLength;
+            document.getElementById('periodDays').textContent = cycleData.periodLength;
+            
+            let phase = 'Follicular Phase';
+            if (cycleDay <= cycleData.periodLength) phase = 'Menstrual Phase';
+            else if (cycleDay > cycleData.avgLength / 2 - 2 && cycleDay < cycleData.avgLength / 2 + 2) phase = 'Ovulation Phase';
+            else if (cycleDay > cycleData.avgLength / 2 + 2) phase = 'Luteal Phase';
+            
+            document.getElementById('currentPhase').textContent = phase;
+        }
+
+        // Migraine Tracker Functions
+        function logMigraine() {
+            const painLevel = document.getElementById('painLevel').value;
+            if (painLevel) {
+                const migraine = {
+                    date: new Date().toLocaleDateString(),
+                    pain: parseInt(painLevel),
+                    triggers: getSelectedTriggers()
+                };
+                migraines.push(migraine);
+                updateMigraineDays();
+                saveMigrainerData();
+                document.getElementById('painLevel').value = '';
+                clearTriggers();
+                displayMigrainerHistory();
+            }
+        }
+
+        function updateMigraineDays() {
+            const lastMigraine = migraines.length > 0 ? new Date(migraines[migraines.length - 1].date) : null;
+            const daysSince = lastMigraine ? Math.floor((new Date() - lastMigraine) / (1000 * 60 * 60 * 24)) : 0;
+            document.getElementById('migraineDays').textContent = daysSince;
+        }
+
+        function displayMigrainerHistory() {
+            const container = document.getElementById('migrainerHistory');
+            if (migraines.length === 0) {
+                container.innerHTML = '<p style="color: #6b7280;">No migraines logged yet</p>';
+                return;
+            }
+            
+            let html = '';
+            migraines.slice(-5).reverse().forEach(migraine => {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(255, 255, 255, 0.7); border-radius: 12px; margin: 0.5rem 0; border: 1px solid rgba(34, 197, 94, 0.1);">
+                        <div>
+                            <div>${migraine.date}</div>
+                            <div style="font-size: 0.8rem; color: #6b7280;">Pain Level: ${migraine.pain}/5</div>
+                        </div>
+                        <span style="font-weight: 600; color: #10b981; font-size: 1.1rem;">Level ${migraine.pain}</span>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Shopping List Functions
+        function generateShoppingList() {
+            displayShoppingList();
+        }
+
+        function displayShoppingList() {
+            Object.keys(shoppingList).forEach(category => {
+                const container = document.getElementById(category + 'Category');
+                let html = '';
+                shoppingList[category].forEach((item, index) => {
+                    html += `
+                        <div style="display: flex; align-items: center; padding: 0.8rem; background: rgba(255, 255, 255, 0.7); border-radius: 10px; margin: 0.5rem 0; cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(34, 197, 94, 0.1);" onclick="toggleShoppingItem(this)">
+                            <input type="checkbox" style="margin-right: 1rem; width: 20px; height: 20px; accent-color: #10b981;">
+                            <span>${item}</span>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            });
+        }
+
+        function toggleShoppingItem(element) {
+            element.classList.toggle('checked');
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            
+            if (element.classList.contains('checked')) {
+                element.style.opacity = '0.6';
+                element.style.textDecoration = 'line-through';
+                element.style.background = 'rgba(16, 185, 129, 0.1)';
+            } else {
+                element.style.opacity = '1';
+                element.style.textDecoration = 'none';
+                element.style.background = 'rgba(255, 255, 255, 0.7)';
+            }
+        }
+
+        function exportShoppingList() {
+            const allItems = [];
+            Object.entries(shoppingList).forEach(([category, items]) => {
+                allItems.push(`\n${category.toUpperCase()}:`);
+                items.forEach(item => allItems.push(`• ${item}`));
+            });
+            
+            const text = "🌿 50Plus Reset Shopping List\n" + allItems.join('\n');
+            
+            // Create downloadable file
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '50plus-reset-shopping-list.txt';
+            a.click();
+            
+            // Also copy to clipboard for sharing
+            navigator.clipboard.writeText(text).then(() => {
+                alert('📋 Shopping list copied to clipboard and downloaded! Share with family! 🌿');
+            }).catch(() => {
+                alert('📁 Shopping list downloaded!');
+            });
+        }
+
+        function addCustomItem() {
+            const item = document.getElementById('customItemInput').value;
+            const category = document.getElementById('customCategory').value;
+            
+            if (item) {
+                shoppingList[category].push(item);
+                displayShoppingList();
+                document.getElementById('customItemInput').value = '';
+                saveShoppingData();
+            }
+        }
+
+        function clearShoppingList() {
+            if (confirm('Clear all shopping list items?')) {
+                shoppingList = {
+                    vegetables: [],
+                    proteins: [],
+                    pantry: []
+                };
+                displayShoppingList();
+                saveShoppingData();
+            }
+        }
+
+        // Photo Functions
+        function addPhoto(type) {
+            document.getElementById('photoInput').click();
+            window.currentPhotoType = type;
+        }
+
+        function handlePhotoUpload() {
+            const file = document.getElementById('photoInput').files[0];
+            if (file && window.currentPhotoType) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const placeholder = document.getElementById(window.currentPhotoType + 'Photo');
+                    placeholder.style.backgroundImage = `url(${e.target.result})`;
+                    placeholder.style.backgroundSize = 'cover';
+                    placeholder.innerHTML = '✓ Photo Added';
+                    placeholder.style.color = '#10b981';
+                    placeholder.style.fontWeight = '600';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Helper functions
+        function toggleSymptom(element, symptom) {
+            element.classList.toggle('completed');
+        }
+
+        function toggleTrigger(element, trigger) {
+            element.classList.toggle('completed');
+        }
+
+        function getSelectedTriggers() {
+            const triggers = [];
+            document.querySelectorAll('[onclick*="toggleTrigger"]').forEach(el => {
+                if (el.classList.contains('completed')) {
+                    const text = el.textContent.trim();
+                    triggers.push(text);
+                }
+            });
+            return triggers;
+        }
+
+        function clearTriggers() {
+            document.querySelectorAll('[onclick*="toggleTrigger"]').forEach(el => {
+                el.classList.remove('completed');
+            });
+        }
+
+        function showGuide(guideId) {
+            alert(`Opening ${guideId} guide! (You can expand this to show full guides)`);
+        }
+
+        // Data persistence for Part 2
+        function saveProgressData() {
+            localStorage.setItem('progressData', JSON.stringify({
+                weightHistory: weightHistory,
+                measurementHistory: measurementHistory
+            }));
+        }
+
+        function saveCycleData() {
+            localStorage.setItem('cycleData', JSON.stringify(cycleData));
+        }
+
+        function saveMigrainerData() {
+            localStorage.setItem('migraines', JSON.stringify(migraines));
+        }
+
+        function saveShoppingData() {
+            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+        }
+
+        // Initialize Part 2 features when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load all Part 2 data
+            loadAllData();
+            displayShoppingList();
+        });
+
+        function loadAllData() {
+            // Load progress data
+            const progressSaved = localStorage.getItem('progressData');
+            if (progressSaved) {
+                const data = JSON.parse(progressSaved);
+                weightHistory = data.weightHistory || [];
+                measurementHistory = data.measurementHistory || {};
+                displayWeightHistory();
+                displayMeasurementHistory();
+            }
+            
+            // Load cycle data
+            const cycleSaved = localStorage.getItem('cycleData');
+            if (cycleSaved) {
+                cycleData = JSON.parse(cycleSaved);
+                updateCycleDisplay();
+            }
+            
+            // Load migraine data
+            const migrainerSaved = localStorage.getItem('migraines');
+            if (migrainerSaved) {
+                migraines = JSON.parse(migrainerSaved);
+                updateMigraineDays();
+                displayMigrainerHistory();
+            }
+            
+            // Load shopping data
+            const shoppingSaved = localStorage.getItem('shoppingList');
+            if (shoppingSaved) {
+                shoppingList = JSON.parse(shoppingSaved);
+            }
+        }
+    </script>
